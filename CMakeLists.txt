@@ -6,4 +6,6 @@ set(CMAKE_CXX_STANDARD 17)
 add_executable(Computer_room_reservation_system main.cpp
         Identity.h
         Student.cpp
-        Student.h)
+        Student.h
+        Teacher.cpp
+        Teacher.h)

@@ -61,6 +61,12 @@ build CMakeFiles/Computer_room_reservation_system.dir/Student.cpp.obj: CXX_COMPI
   OBJECT_DIR = CMakeFiles\Computer_room_reservation_system.dir
   OBJECT_FILE_DIR = CMakeFiles\Computer_room_reservation_system.dir
 
+build CMakeFiles/Computer_room_reservation_system.dir/Teacher.cpp.obj: CXX_COMPILER__Computer_room_reservation_system_unscanned_Debug C$:/Users/24101/Desktop/Code/Clion/Computer$ room$ reservation$ system/Teacher.cpp || cmake_object_order_depends_target_Computer_room_reservation_system
+  DEP_FILE = CMakeFiles\Computer_room_reservation_system.dir\Teacher.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\Computer_room_reservation_system.dir
+  OBJECT_FILE_DIR = CMakeFiles\Computer_room_reservation_system.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Computer_room_reservation_system
@@ -69,7 +75,7 @@ build CMakeFiles/Computer_room_reservation_system.dir/Student.cpp.obj: CXX_COMPI
 #############################################
 # Link the executable Computer_room_reservation_system.exe
 
-build Computer_room_reservation_system.exe: CXX_EXECUTABLE_LINKER__Computer_room_reservation_system_Debug CMakeFiles/Computer_room_reservation_system.dir/main.cpp.obj CMakeFiles/Computer_room_reservation_system.dir/Student.cpp.obj
+build Computer_room_reservation_system.exe: CXX_EXECUTABLE_LINKER__Computer_room_reservation_system_Debug CMakeFiles/Computer_room_reservation_system.dir/main.cpp.obj CMakeFiles/Computer_room_reservation_system.dir/Student.cpp.obj CMakeFiles/Computer_room_reservation_system.dir/Teacher.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Computer_room_reservation_system.dir
