@@ -1,3 +1,5 @@
 # ninja log v5
 6	435	7463412373123034	CMakeFiles/Computer_room_reservation_system.dir/main.cpp.obj	1d02ea5e8332fa19
 436	622	7463412374913126	Computer_room_reservation_system.exe	e47d3f90e1ed3a4f
+5	313	7463426021971208	CMakeFiles/Computer_room_reservation_system.dir/Student.cpp.obj	b31ee1285057c646
+314	469	7463426023497230	Computer_room_reservation_system.exe	4d167a7d5b0cc104
