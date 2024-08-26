@@ -3,4 +3,5 @@ project(Computer_room_reservation_system)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(Computer_room_reservation_system main.cpp)
+add_executable(Computer_room_reservation_system main.cpp
+        Identity.h)
