@@ -8,4 +8,6 @@ add_executable(Computer_room_reservation_system main.cpp
         Student.cpp
         Student.h
         Teacher.cpp
-        Teacher.h)
+        Teacher.h
+        Admin.cpp
+        Admin.h)
