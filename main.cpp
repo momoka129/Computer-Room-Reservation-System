@@ -48,7 +48,9 @@ int main() {
 
             //exit
             case 0:
-                break;
+                cout<<"Welcome next use."<<endl;
+                return 0;
+                //break;
 
             default:
                 cout<<"Invalid input!\tENTER A VALID INPUT!"<<endl;
