@@ -4,6 +4,9 @@ using namespace std;
 #include "Identity.h"
 #include <fstream>
 #include "globalFile.h"
+#include "Student.h"
+#include "Teacher.h"
+#include "Admin.h"
 
 //log in function: operator file, operator identity
 void logIn(string fileName, int type){
@@ -52,15 +55,50 @@ void logIn(string fileName, int type){
 
     if(type == 1){
         //student identity check
+        int fId;    //The id number obtained from the file
+        string fUsername;
+        string fPwd;
+        while(ifs>>fId && ifs>>fUsername && ifs>>fPwd){
+            if(fId == id && fUsername == userName && fPwd == pwd){
+                cout<<"Student login verification successful!"<<endl;
 
+                person = new Student(id, userName, pwd);
+
+                //go to the student submenu
+                return;
+            }
+        }
     }
     else if(type == 2){
         //teacher identity verification
+        int fId;    //The id number obtained from the file
+        string fUsername;
+        string fPwd;
+        while(ifs>>fId && ifs>>fUsername && ifs>>fPwd){
+            if(fId == id && fUsername == userName && fPwd == pwd){
+                cout<<"Teacher login verification successful!"<<endl;
 
+                person = new Teacher(id, userName, pwd);
+
+                //go to the teacher submenu
+                return;
+            }
+        }
     }
     else if(type == 3){
         //admin identity verification
+        string fUsername;   //The id username obtained from the file
+        string fPwd;
+        while(ifs>>fUsername && ifs>>fPwd){
+            if(fUsername == userName && fPwd == pwd){
+                cout<<"Admin login verification successful!"<<endl;
 
+                person = new Admin(userName, pwd);
+
+                //go to the admin submenu
+                return;
+            }
+        }
     }
 
     cout<<"Verification login failed."<<endl;
