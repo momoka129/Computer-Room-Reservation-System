@@ -1,8 +1,6 @@
 # ninja log v5
 6	435	7463412373123034	CMakeFiles/Computer_room_reservation_system.dir/main.cpp.obj	1d02ea5e8332fa19
-300	447	7463431398851156	Computer_room_reservation_system.exe	b6f8474a9595000c
-5	313	7463426021971208	CMakeFiles/Computer_room_reservation_system.dir/Student.cpp.obj	b31ee1285057c646
-4	300	7463431397406632	CMakeFiles/Computer_room_reservation_system.dir/Teacher.cpp.obj	da0c2fcaa0d3420d
-15	350	7463436413517325	CMakeFiles/Computer_room_reservation_system.dir/Admin.cpp.obj	4fe49016d6bc5126
-5	352	7463436413537333	CMakeFiles/Computer_room_reservation_system.dir/Teacher.cpp.obj	da0c2fcaa0d3420d
 353	504	7463436415013731	Computer_room_reservation_system.exe	b7bc4c37349d7f88
+5	313	7463426021971208	CMakeFiles/Computer_room_reservation_system.dir/Student.cpp.obj	b31ee1285057c646
+5	352	7463436413537333	CMakeFiles/Computer_room_reservation_system.dir/Teacher.cpp.obj	da0c2fcaa0d3420d
+15	350	7463436413517325	CMakeFiles/Computer_room_reservation_system.dir/Admin.cpp.obj	4fe49016d6bc5126

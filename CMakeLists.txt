@@ -10,4 +10,5 @@ add_executable(Computer_room_reservation_system main.cpp
         Teacher.cpp
         Teacher.h
         Admin.cpp
-        Admin.h)
+        Admin.h
+        globalFile.h)
