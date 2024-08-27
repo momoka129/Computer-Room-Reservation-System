@@ -1,6 +1,71 @@
 #include <iostream>
 using namespace std;
 #include <limits>
+#include "Identity.h"
+#include <fstream>
+#include "globalFile.h"
+
+//log in function: operator file, operator identity
+void logIn(string fileName, int type){
+    //Parent class pointer, used to point to the child class object
+    Identity * person = NULL;
+
+    //read file
+    ifstream ifs;
+    ifs.open(fileName, ios::in);
+
+    //determine whether the file exists
+    if(!ifs.is_open()){
+        string p;
+        if(type == 1){
+            p = "STUDENT";
+        } else if(type == 2){
+            p = "TEACHER";
+        } else{
+            p = "ADMIN";
+        }
+        cout<<"The "<<p<<" file is missing. Login failed."<<endl;
+        ifs.close();
+        return;
+    }
+
+    //prepare account info
+    int id = 0;
+    string userName;
+    string pwd;
+
+    //determine identity type
+    if(type == 1){
+        cout<<"Please enter your student id: "<<endl;
+        cin>>id;
+    }
+    else if(type == 2){
+        cout<<"Please enter your teacher id: "<<endl;
+        cin>>id;
+    }
+
+    cout<<"Please enter your username: "<<endl;
+    cin >> userName;
+
+    cout<<"Please enter your password: "<<endl;
+    cin>>pwd;
+
+    if(type == 1){
+        //student identity check
+
+    }
+    else if(type == 2){
+        //teacher identity verification
+
+    }
+    else if(type == 3){
+        //admin identity verification
+
+    }
+
+    cout<<"Verification login failed."<<endl;
+
+}
 
 int main() {
 
@@ -35,15 +100,17 @@ int main() {
         switch (select) {
             //student
             case 1:
-                cout<<"1";
+                logIn(STUDENT_FILE, 1);
                 break;
 
             //teacher
             case 2:
+                logIn(TEACHER_FILE, 2);
                 break;
 
             //administrator
             case 3:
+                logIn(ADMIN_FILE, 3);
                 break;
 
             //exit
