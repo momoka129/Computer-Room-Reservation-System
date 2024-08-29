@@ -8,6 +8,51 @@ using namespace std;
 #include "Teacher.h"
 #include "Admin.h"
 
+//go to admin submenu
+void adminMenu(Identity * &admin){
+    while(true){
+        //call admin submenu
+        admin->each_Menu();
+
+        //Convert the parent class pointer to a subclass pointer and call other interfaces in the subclass
+        Admin * ad = (Admin*)admin;
+
+        int select = 0;
+        cin>>select;
+
+        if(cin.fail()){
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            cout << "Invalid input! Please enter a number." << endl;
+            continue;
+
+        }
+
+        if(select == 1){    //add account
+            cout<<"Add account"<<endl;
+            ad->add_Acc();
+        }
+        else if(select == 2){   //check accounts
+            cout<<"View accounts"<<endl;
+            ad->view_acc();
+        }
+        else if(select == 3){   //check computer room
+            cout<<"Check computer room"<<endl;
+            ad->view_CR_info();
+        }
+        else if(select == 4){   //clear reservation
+            cout<<"Clear reservation"<<endl;
+            ad->clear_file();
+        }
+        else{   //logout
+            delete admin;       //destroy heap objects
+            cout<<"Logout successful"<<endl;
+            return;
+        }
+
+    }
+}
+
 //log in function: operator file, operator identity
 void logIn(string fileName, int type){
     //Parent class pointer, used to point to the child class object
@@ -96,6 +141,8 @@ void logIn(string fileName, int type){
                 person = new Admin(userName, pwd);
 
                 //go to the admin submenu
+                adminMenu(person);
+
                 return;
             }
         }
@@ -119,6 +166,8 @@ int main() {
         cout<<"\t\t|   2. Teacher                  |\n";
         cout<<"\t\t|                               |\n";
         cout<<"\t\t|   3. Administrator            |\n";
+        cout<<"\t\t|                               |\n";
+        cout<<"\t\t|   0. Exit                     |\n";
         cout<<"\t\t|                               |\n";
         cout<<"\t\t--------------------------------\n";
         cout<<"Please enter your choice: ";
