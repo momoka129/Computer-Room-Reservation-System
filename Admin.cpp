@@ -35,7 +35,45 @@ void Admin::each_Menu(){
 
 //add account
 void Admin::add_Acc(){
+    cout<<"Please enter the type of account to add"<<endl;
+    cout<<"1. add student account"<<endl;
+    cout<<"2. add teacher account"<<endl;
 
+    string fileName;
+    string tip;
+    ofstream ofs;
+
+    int select = 0;
+    cin>>select;
+
+    if(select == 1){
+        fileName = STUDENT_FILE;
+        tip = "Please enter the student id: ";
+    }
+    else if(select == 2){
+        fileName = TEACHER_FILE;
+        tip = "Please enter the teacher id: ";
+    }
+
+    ofs.open(fileName, ios::out | ios::app);
+
+    int id;     //student id or teacher id
+    string username;
+    string pwd;
+
+    cout<<tip;
+    cin>>id;
+
+    cout<<"Please enter the student username: ";
+    cin>>username;
+
+    cout<<"Please enter the password: ";
+    cin>>pwd;
+
+    //add data to the file
+    ofs<<id<<" "<<username<<" "<<pwd;
+    ofs<<endl;
+    cout<<"Add successfully!"<<endl;
 }
 
 //view accounts
