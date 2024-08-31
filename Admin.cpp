@@ -12,6 +12,8 @@ Admin::Admin(){
 Admin::Admin(string name, string pwd){
     this->username = name;
     this->pwd = pwd;
+
+    this->initVector();
 }
 
 //Admin menu
@@ -89,4 +91,41 @@ void Admin::view_CR_info(){
 //clear reservation records
 void Admin::clear_file(){
 
+}
+
+void Admin::initVector(){
+    //ensure the vector is empty
+    vStu.clear();
+    vTea.clear();
+
+    //read info: student
+    ifstream ifs;
+    ifs.open(STUDENT_FILE, ios::in);
+    if(!ifs.is_open()){
+        cout<<"File read failed."<<endl;
+        return;
+    }
+
+    Student s;
+    while(ifs>>s.ID && ifs>>s.username && ifs>>s.pwd){
+        vStu.push_back(s);
+    }
+    cout<<"Current student number: "<<vStu.size()<<endl;
+
+    ifs.close();
+
+    //read info: teacher
+    ifs.open(TEACHER_FILE, ios::in);
+    if(!ifs.is_open()){
+        cout<<"File read failed."<<endl;
+        return;
+    }
+
+    Teacher t;
+    while(ifs>>t.ID && ifs>>t.username && ifs>>t.pwd){
+        vTea.push_back(t);
+    }
+    cout<<"Current teacher number: "<<vTea.size()<<endl;
+
+    ifs.close();
 }

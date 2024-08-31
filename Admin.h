@@ -11,6 +11,9 @@ using namespace std;
 #include "Identity.h"
 #include <fstream>
 #include "globalFile.h"
+#include <vector>
+#include "Student.h"
+#include "Teacher.h"
 
 
 class Admin : public Identity{
@@ -33,6 +36,12 @@ public:
 
     //clear reservation records
     void clear_file();
+
+    void initVector();
+
+    vector<Student> vStu;
+
+    vector<Teacher> vTea;
 };
 
 

@@ -8,7 +8,7 @@ using namespace std;
 #include "Teacher.h"
 #include "Admin.h"
 
-//go to admin submenu
+//the admin submenu
 void adminMenu(Identity * &admin){
     while(true){
         //call admin submenu
@@ -187,17 +187,17 @@ int main() {
         switch (select) {
             //student
             case 1:
-                logIn(STUDENT_FILE, 1);
+                logIn(STUDENT_FILE, select);
                 break;
 
             //teacher
             case 2:
-                logIn(TEACHER_FILE, 2);
+                logIn(TEACHER_FILE, select);
                 break;
 
             //administrator
             case 3:
-                logIn(ADMIN_FILE, 3);
+                logIn(ADMIN_FILE, select);
                 break;
 
             //exit
