@@ -39,9 +39,13 @@ public:
 
     void initVector();
 
+    //detecting duplicates
+    bool checkRepeat(int id, int type);
+
     vector<Student> vStu;
 
     vector<Teacher> vTea;
+
 };
 
 

@@ -9,18 +9,18 @@ using namespace std;
 #include "Admin.h"
 
 //the admin submenu
-void adminMenu(Identity * &admin){
-    while(true){
+void adminMenu(Identity * &admin) {
+    while (true) {
         //call admin submenu
         admin->each_Menu();
 
         //Convert the parent class pointer to a subclass pointer and call other interfaces in the subclass
-        Admin * ad = (Admin*)admin;
+        Admin *ad = (Admin *) admin;
 
         int select = 0;
-        cin>>select;
+        cin >> select;
 
-        if(cin.fail()){
+        if (cin.fail()) {
             cin.clear();
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
             cout << "Invalid input! Please enter a number." << endl;
@@ -28,30 +28,29 @@ void adminMenu(Identity * &admin){
 
         }
 
-        if(select == 1){    //add account
-            cout<<"Add account"<<endl;
+        if (select == 1) {    //add account
+            cout << "Add account" << endl;
             ad->add_Acc();
-        }
-        else if(select == 2){   //check accounts
-            cout<<"View accounts"<<endl;
+        } else if (select == 2) {   //check accounts
+            cout << "View accounts" << endl;
             ad->view_acc();
-        }
-        else if(select == 3){   //check computer room
-            cout<<"Check computer room"<<endl;
+        } else if (select == 3) {   //check computer room
+            cout << "Check computer room" << endl;
             ad->view_CR_info();
-        }
-        else if(select == 4){   //clear reservation
-            cout<<"Clear reservation"<<endl;
+        } else if (select == 4) {   //clear reservation
+            cout << "Clear reservation" << endl;
             ad->clear_file();
-        }
-        else{   //logout
+        } else if (select == 0) {   //logout
             delete admin;       //destroy heap objects
-            cout<<"Logout successful"<<endl;
+            cout << "Logout successful" << endl;
             return;
+        } else {
+            cout << "Wrong enter..." << endl;
         }
 
     }
 }
+
 
 //log in function: operator file, operator identity
 void logIn(string fileName, int type){

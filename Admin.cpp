@@ -43,6 +43,7 @@ void Admin::add_Acc(){
 
     string fileName;
     string tip;
+    string repeatTip;
     ofstream ofs;
 
     int select = 0;
@@ -50,11 +51,17 @@ void Admin::add_Acc(){
 
     if(select == 1){
         fileName = STUDENT_FILE;
-        tip = "Please enter the student id: ";
+        tip = "Please enter the student ID: ";
+        repeatTip = "The student ID already exists, please select a different one.";
     }
     else if(select == 2){
         fileName = TEACHER_FILE;
-        tip = "Please enter the teacher id: ";
+        tip = "Please enter the teacher ID: ";
+        repeatTip = "The teacher ID already exists, please select a different one.";
+    }
+    else{
+        cout<<"wrong enter. Add account terminate."<<endl;
+        return;
     }
 
     ofs.open(fileName, ios::out | ios::app);
@@ -63,8 +70,19 @@ void Admin::add_Acc(){
     string username;
     string pwd;
 
-    cout<<tip;
-    cin>>id;
+    cout<<tip<<endl;
+    while(true){
+        cin>>id;
+        bool res = checkRepeat(id, select);
+        if(res){
+            cout<<repeatTip<<endl;
+        }
+        //exit the infinite loop
+        else{
+            break;
+        }
+    }
+
 
     cout<<"Please enter the student username: ";
     cin>>username;
@@ -128,4 +146,25 @@ void Admin::initVector(){
     cout<<"Current teacher number: "<<vTea.size()<<endl;
 
     ifs.close();
+}
+
+bool Admin::checkRepeat(int id, int type) {
+    if(type == 1){
+        //detect student id
+        for(vector<Student>::iterator it = vStu.begin(); it != vStu.end(); it++){
+            if(id == it->ID){
+                return true;
+            }
+        }
+    }
+    else if(type == 2){
+        //detect teacher id
+        for(vector<Teacher>::iterator it = vTea.begin(); it != vTea.end(); it++){
+            if(id == it->ID){
+                return true;
+            }
+        }
+    }
+    return false;
+
 }
