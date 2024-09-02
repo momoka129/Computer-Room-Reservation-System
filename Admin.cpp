@@ -84,7 +84,7 @@ void Admin::add_Acc(){
     }
 
 
-    cout<<"Please enter the student username: ";
+    cout<<"Please enter the username: ";
     cin>>username;
 
     cout<<"Please enter the password: ";
@@ -94,6 +94,29 @@ void Admin::add_Acc(){
     ofs<<id<<" "<<username<<" "<<pwd;
     ofs<<endl;
     cout<<"Add successfully!"<<endl;
+
+    ofs.close();
+
+    //update vector to fix the bug which will add people with the same id bcs the vector is not updated
+    //this->initVector();
+
+    //or no need to init vector, that will cost a lot and not efficient
+    //manually add the one new user is more efficient
+    if(select == 1){
+        Student newStudent;
+        newStudent.ID = id;
+        newStudent.username = username;
+        newStudent.pwd = pwd;
+        vStu.push_back(newStudent);
+    }
+    else if(select == 2){
+        Teacher newTeacher;
+        newTeacher.ID = id;
+        newTeacher.username = username;
+        newTeacher.pwd = pwd;
+        vTea.push_back(newTeacher);
+    }
+
 }
 
 //view accounts
