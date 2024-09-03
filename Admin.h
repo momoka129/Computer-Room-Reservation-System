@@ -14,6 +14,8 @@ using namespace std;
 #include <vector>
 #include "Student.h"
 #include "Teacher.h"
+#include <algorithm>
+#include <iomanip>
 
 
 class Admin : public Identity{

@@ -119,9 +119,34 @@ void Admin::add_Acc(){
 
 }
 
+void printStudent(Student &s){
+    cout<<"Student ID: "<<setw(2)<<s.ID<<"\t\tUsername: "<<setw(8)<<s.username<<"\t\tPassword: "<<setw(8)<<s.pwd<<endl;
+}
+
 //view accounts
 void Admin::view_acc(){
+    cout<<"Please select the content to view: "<<endl;
+    cout<<"1. view all student"<<endl;
+    cout<<"2. view all teacher"<<endl;
 
+    int select = 0;
+    cin>>select;
+
+    if(select == 1){
+        //student
+        cout<<"All student info is as follows: "<<endl;
+        for_each(vStu.begin(), vStu.end(), printStudent);
+    }
+    else if(select == 2){
+        cout<<"All teacher info is as follows: "<<endl;
+        for(vector<Teacher>::iterator it = vTea.begin(); it != vTea.end(); it++){
+            cout<<"Teacher ID: "<<setw(2)<<it->ID<<"\t\tUsername: "<<setw(8)<<it->username<<"\t\tPassword: "<<setw(8)<<it->pwd<<endl;
+        }
+    }
+    else{
+        cout<<"Wrong enter......"<<endl;
+        return;
+    }
 }
 
 //view computer room info
