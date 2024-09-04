@@ -29,16 +29,16 @@ void adminMenu(Identity * &admin) {
         }
 
         if (select == 1) {    //add account
-            cout << "Add account" << endl;
+            //cout << "Add account" << endl;
             ad->add_Acc();
         } else if (select == 2) {   //check accounts
-            cout << "View accounts" << endl;
+            //cout << "View accounts" << endl;
             ad->view_acc();
         } else if (select == 3) {   //check computer room
-            cout << "Check computer room" << endl;
+            //cout << "Check computer room" << endl;
             ad->view_CR_info();
         } else if (select == 4) {   //clear reservation
-            cout << "Clear reservation" << endl;
+            //cout << "Clear reservation" << endl;
             ad->clear_file();
         } else if (select == 0) {   //logout
             delete admin;       //destroy heap objects

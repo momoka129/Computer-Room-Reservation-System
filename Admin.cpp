@@ -160,7 +160,26 @@ void Admin::view_CR_info(){
 
 //clear reservation records
 void Admin::clear_file(){
+    cout<<"Are you sure you want to clear the reservation record?"<<endl;
+    cout<<"1. YES"<<endl;
+    cout<<"2. NO"<<endl;
 
+    int select;
+    cin>>select;
+
+    if(select == 1){
+        ofstream ofs;
+        ofs.open(RESERVATION_FILE, ios::trunc);
+        ofs.close();
+
+        cout<<"Clear successfully!"<<endl;
+    }
+    else if(select == 2){
+        cout<<"Clear reservation record to terminate."<<endl;
+    }
+    else{
+        cout<<"Wrong enter. exit..."<<endl;
+    }
 }
 
 void Admin::initVector(){
