@@ -151,7 +151,11 @@ void Admin::view_acc(){
 
 //view computer room info
 void Admin::view_CR_info(){
+    cout<<"The computer room info is as follows: "<<endl;
 
+    for(vector<ComputerRoom>::iterator it = vCom_room.begin(); it != vCom_room.end(); it++){
+        cout<<"Computer room ID: "<<setw(2)<<it->id<<"\t\tIts capacity: "<<setw(3)<<it->max_num<<endl;
+    }
 }
 
 //clear reservation records
@@ -163,6 +167,7 @@ void Admin::initVector(){
     //ensure the vector is empty
     vStu.clear();
     vTea.clear();
+    vCom_room.clear();
 
     //read info: student
     ifstream ifs;
@@ -192,6 +197,21 @@ void Admin::initVector(){
         vTea.push_back(t);
     }
     cout<<"Current teacher number: "<<vTea.size()<<endl;
+
+    ifs.close();
+
+    //read info: computer room
+    ifs.open(COMPUTER_FILE, ios::in);
+    if(!ifs.is_open()){
+        cout<<"File read failed."<<endl;
+        return;
+    }
+
+    ComputerRoom cr;
+    while(ifs>>cr.id && ifs>>cr.max_num){
+        vCom_room.push_back(cr);
+    }
+    cout<<"Total computer room number: "<<vCom_room.size()<<endl;
 
     ifs.close();
 }

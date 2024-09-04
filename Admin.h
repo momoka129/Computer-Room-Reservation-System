@@ -16,6 +16,7 @@ using namespace std;
 #include "Teacher.h"
 #include <algorithm>
 #include <iomanip>
+#include "computerRoom.h"
 
 
 class Admin : public Identity{
@@ -47,6 +48,9 @@ public:
     vector<Student> vStu;
 
     vector<Teacher> vTea;
+
+    //store computer room info
+    vector<ComputerRoom> vCom_room;
 
 };
 
