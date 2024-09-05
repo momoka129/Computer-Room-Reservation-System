@@ -8,6 +8,45 @@ using namespace std;
 #include "Teacher.h"
 #include "Admin.h"
 
+//the student submenu
+void studentMenu(Identity* &student){
+    while (1){
+        //call student submenu
+        student->each_Menu();
+
+        Student * stu = (Student*) student;
+
+        int select = 0;
+        cin>>select;
+
+        if(select == 1){
+            //apply for reservation
+            stu->apply_R();
+        }
+        else if(select == 2){
+            //check self reservation
+            stu->view_my_R();
+        }
+        else if(select == 3){
+            //check all reservation
+            stu->view_all_R();
+        }
+        else if(select == 4){
+            //cancel reservation
+            stu->view_all_R();
+        }
+        else if(select == 0){
+            //log out
+            delete student;     //need to implement identity virtual destructor
+            cout<<"Log out successfully!"<<endl;
+            return;
+        } else{
+            cout<<"Wrong enter....."<<endl;
+        }
+
+    }
+}
+
 //the admin submenu
 void adminMenu(Identity * &admin) {
     while (true) {
@@ -25,7 +64,6 @@ void adminMenu(Identity * &admin) {
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
             cout << "Invalid input! Please enter a number." << endl;
             continue;
-
         }
 
         if (select == 1) {    //add account
@@ -109,6 +147,7 @@ void logIn(string fileName, int type){
                 person = new Student(id, userName, pwd);
 
                 //go to the student submenu
+                studentMenu(person);
                 return;
             }
         }

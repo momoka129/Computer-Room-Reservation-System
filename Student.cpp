@@ -11,12 +11,30 @@ Student::Student(){
 //constructor with parameters
 Student::Student(int id, string name, string pwd)
 {
-
+    this->ID = id;
+    this->username = name;
+    this->pwd = pwd;
 }
+
+//virtual
 
 //student menu
 void Student::each_Menu(){
-
+    cout<<"Welcome student representative: "<<this->username<<" login!"<<endl;
+    cout<<"\t\t-------------------------------------\n";
+    cout<<"\t\t|                                    |\n";
+    cout<<"\t\t|      1. apply for reservation      |\n";
+    cout<<"\t\t|                                    |\n";
+    cout<<"\t\t|      2. check my reservation       |\n";
+    cout<<"\t\t|                                    |\n";
+    cout<<"\t\t|      3. check all reservation      |\n";
+    cout<<"\t\t|                                    |\n";
+    cout<<"\t\t|      4. cancel my reservation      |\n";
+    cout<<"\t\t|                                    |\n";
+    cout<<"\t\t       0. logout                     |\n";
+    cout<<"\t\t|                                    |\n";
+    cout<<"\t\t-------------------------------------\n";
+    cout<<"Please enter your choice: ";
 }
 
 //apply for a reservation

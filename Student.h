@@ -17,6 +17,9 @@ public:
     //constructor with parameters
     Student(int id, string name, string pwd);
 
+    //implement parent pure virtual destructor
+    //~Student();
+
     //student menu
     virtual void each_Menu();
 
