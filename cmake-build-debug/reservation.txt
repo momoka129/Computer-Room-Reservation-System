@@ -1,0 +1,1 @@
+date: 1   interval: 1   reservation student id: 1   name: Nina   computer room id1   status: 1
