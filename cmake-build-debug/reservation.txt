@@ -1,1 +1,2 @@
-date: 1   interval: 1   reservation student id: 1   name: Nina   computer room id1   status: 1
+date:1   interval:1   reservationStudentId:1   name:Nina   computerRoomId:1   status:1
+date:1   interval:1   reservationStudentId:2   name:Momoka   computerRoomId:1   status:1

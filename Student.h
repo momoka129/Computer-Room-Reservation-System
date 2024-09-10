@@ -13,6 +13,7 @@ using namespace std;
 #include "computerRoom.h"
 #include <fstream>
 #include "globalFile.h"
+#include "ReadReservation.h"
 
 class Student : public Identity{
 public:

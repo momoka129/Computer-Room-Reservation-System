@@ -81,12 +81,12 @@ void Student::apply_R(){
     ofstream ofs;
     ofs.open(RESERVATION_FILE, ios::app);
 
-    ofs<<"date: "<<date<<"   ";
-    ofs<<"interval: "<<interval<<"   ";
-    ofs<<"reservation student id: "<<this->ID<<"   ";
-    ofs<<"name: "<<this->username<<"   ";
-    ofs<<"computer room id"<<roomID<<"   ";
-    ofs<<"status: "<<1;
+    ofs<<"date:"<<date<<"   ";
+    ofs<<"interval:"<<interval<<"   ";
+    ofs<<"reservationStudentId:"<<this->ID<<"   ";
+    ofs<<"name:"<<this->username<<"   ";
+    ofs<<"computerRoomId:"<<roomID<<"   ";
+    ofs<<"status:"<<1;
     ofs<<endl;
 
     ofs.close();
@@ -97,7 +97,7 @@ void Student::apply_R(){
 
 //check own reservations
 void Student::view_my_R(){
-
+    ReadReservation rr;
 }
 
 //check all reservation
