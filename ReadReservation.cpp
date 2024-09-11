@@ -54,16 +54,32 @@ ReadReservation::ReadReservation() {
 
     ifs.close();
 
-    for(map<int, map<string, string>>::iterator it = m_R_data.begin(); it != m_R_data.end(); it++){
-        cout<<"Reservation No."<<it->first<<" value = "<<endl;
-        for(map<string, string>::iterator it2 = (*it).second.begin(); it2 != (*it).second.end(); it2++){
-            cout<<"key: "<<it2->first<<" value: "<<it2->second<<"  ";
-        }
-        cout<<endl;
-    }
+//    for(map<int, map<string, string>>::iterator it = m_R_data.begin(); it != m_R_data.end(); it++){
+//        cout<<"Reservation No."<<it->first<<" value = "<<endl;
+//        for(map<string, string>::iterator it2 = (*it).second.begin(); it2 != (*it).second.end(); it2++){
+//            cout<<"key: "<<it2->first<<" value: "<<it2->second<<"  ";
+//        }
+//        cout<<endl;
+//    }
 
 }
 
 void ReadReservation::updateR() {
+    if(this->m_size == 0){
+        return;
+    }
 
+    ofstream ofs(RESERVATION_FILE, ios::out | ios::trunc);
+
+    for(int i = 0; i < this->m_size; i++){
+        ofs<<"date:"<<this->m_R_data[i]["date"]<<" ";
+        ofs<<"interval:"<<this->m_R_data[i]["interval"]<<" ";
+        ofs<<"reservationStudentId:"<<this->m_R_data[i]["reservationStudentId"]<<" ";
+        ofs<<"name:"<<this->m_R_data[i]["name"]<<" ";
+        ofs<<"computerRoomId:"<<this->m_R_data[i]["computerRoomId"]<<" ";
+        ofs<<"status:"<<this->m_R_data[i]["status"];
+        ofs<<endl;
+    }
+
+    ofs.close();
 }

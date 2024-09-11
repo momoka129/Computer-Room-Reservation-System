@@ -98,6 +98,40 @@ void Student::apply_R(){
 //check own reservations
 void Student::view_my_R(){
     ReadReservation rr;
+
+    if(rr.m_size == 0){
+        cout<<"No reservation records!"<<endl;
+        return;
+    }
+
+    //convert string to int
+    //first convert cpp type string to c type string, then into int
+    for(int i = 0; i < rr.m_size; i++){
+        if(this->ID == atoi(rr.m_R_data[i]["reservationStudentId"].c_str())){
+            cout<<"Date: "<<rr.m_R_data[i]["date"];
+            cout<<"   Interval: "<<(rr.m_R_data[i]["interval"] == "1" ? "Morning" : "Afternoon");
+            cout<<"   Computer room ID: "<<rr.m_R_data[i]["computerRoomId"];
+
+            string status = "   Reservation status: ";
+            if(rr.m_R_data[i]["status"] == "1"){
+                status += "Under review";
+            }
+            else if(rr.m_R_data[i]["status"] == "2"){
+                status += "Reservation successful";
+            }
+            else if(rr.m_R_data[i]["status"] == "-1"){
+                status += "Reservation failed";
+            }
+            else if(rr.m_R_data[i]["status"] == "0"){
+                status += "Reservation canceled";
+            }
+            else{
+                cout<<"\nUnable to identify the reservation status, try it later."<<endl;
+            }
+            cout<<status;
+            cout<<endl;
+        }
+    }
 }
 
 //check all reservation
