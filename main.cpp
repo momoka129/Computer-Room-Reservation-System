@@ -33,7 +33,7 @@ void studentMenu(Identity* &student){
         }
         else if(select == 4){
             //cancel reservation
-            stu->view_all_R();
+            stu->cancel_R();
         }
         else if(select == 0){
             //log out
