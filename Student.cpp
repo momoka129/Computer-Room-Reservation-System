@@ -41,7 +41,7 @@ void Student::each_Menu(){
     cout<<"\t\t|                                    |\n";
     cout<<"\t\t|      4. cancel my reservation      |\n";
     cout<<"\t\t|                                    |\n";
-    cout<<"\t\t       0. logout                     |\n";
+    cout<<"\t\t|      0. logout                     |\n";
     cout<<"\t\t|                                    |\n";
     cout<<"\t\t-------------------------------------\n";
     cout<<"Please enter your choice: ";

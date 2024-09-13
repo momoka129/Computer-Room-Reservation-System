@@ -8,9 +8,40 @@ using namespace std;
 #include "Teacher.h"
 #include "Admin.h"
 
+//the teacher submenu
+void teacherMenu(Identity* teacher){
+    while(true){
+        //call the submenu
+        teacher->each_Menu();
+
+        Teacher * tea = (Teacher*)teacher;
+
+        int select = 0;
+        cin>>select;
+
+        if(select == 1){
+            //check all reservation
+            tea->view_all_R();
+        }
+        else if(select == 2){
+            //review reservation
+            tea->valid_R();
+        }
+        else if(select == 0){
+            //log out
+            delete teacher;
+            cout<<"Log out successfully!"<<endl;
+            return;
+        }
+        else{
+            cout<<"Wrong enter..try one more time."<<endl;
+        }
+    }
+}
+
 //the student submenu
 void studentMenu(Identity* &student){
-    while (1){
+    while (true){
         //call student submenu
         student->each_Menu();
 
@@ -164,6 +195,7 @@ void logIn(string fileName, int type){
                 person = new Teacher(id, userName, pwd);
 
                 //go to the teacher submenu
+                teacherMenu(person);
                 return;
             }
         }

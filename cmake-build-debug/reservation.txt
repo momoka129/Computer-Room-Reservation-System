@@ -1,4 +1,4 @@
-date:1 interval:1 reservationStudentId:1 name:Nina computerRoomId:1 status:1
-date:1 interval:1 reservationStudentId:2 name:Momoka computerRoomId:1 status:1
+date:1 interval:1 reservationStudentId:1 name:Nina computerRoomId:1 status:2
+date:1 interval:1 reservationStudentId:2 name:Momoka computerRoomId:1 status:2
 date:3 interval:2 reservationStudentId:2 name:Momoka computerRoomId:3 status:0
 date:4 interval:2 reservationStudentId:2 name:Momoka computerRoomId:2 status:1

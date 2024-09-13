@@ -8,6 +8,8 @@
 #include <iostream>
 using namespace std;
 #include "Identity.h"
+#include "ReadReservation.h"
+#include <vector>
 
 class Teacher : public Identity{
 public:

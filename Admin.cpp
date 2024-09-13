@@ -29,8 +29,8 @@ void Admin::each_Menu(){
     cout<<"\t\t|                               |\n";
     cout<<"\t\t|      4. clear reservation     |\n";
     cout<<"\t\t|                               |\n";
-    cout<<"\t\t       0. logout                |\n";
-    cout<<"\t\t|                              |\n";
+    cout<<"\t\t|      0. logout                |\n";
+    cout<<"\t\t|                               |\n";
     cout<<"\t\t--------------------------------\n";
     cout<<"Please enter your choice: ";
 }
